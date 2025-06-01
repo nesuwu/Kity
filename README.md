@@ -83,4 +83,4 @@ This project is licensed under the [MIT License] - see the `LICENSE.md` file for
 
 ---
 
-*Inspired by my Roman Empite -  [Cathy-Electron](https://github.com/nesuwu/Cathy-Electron).*****
+*Inspired by my Roman Empite -  [Cathy-Electron](https://github.com/nesuwu/Cathy-Electron).
