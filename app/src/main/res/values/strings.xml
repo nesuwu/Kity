@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Kity</string>
+
+    <!-- UI Text from HTML/Design -->
+    <string name="upload_files_title">Kity</string>
+    <string name="userhash_label">Userhash</string>
+    <string name="userhash_hint">Enter your userhash</string>
+    <string name="remember_my_userhash">Remember my userhash</string>
+    <string name="select_file_to_upload_title">Select file to upload</string>
+    <string name="file_picker_button_text">Select File</string>
+    <string name="file_picker_icon_description">Upload file icon</string>
+    <string name="start_uploading_button_text">Start uploading</string>
+    <string name="download_link_title">Download link</string>
+    <string name="download_link_hint">Download link will appear here</string>
+    <string name="copy_link_button_description">Copy download link</string>
+    <string name="preview_image_description">Preview of selected image</string>
+
+    <!-- Strings used in MainActivity.kt -->
+    <string name="please_select_file_first">Please select a file first.</string>
+    <string name="link_copied_to_clipboard">Link copied to clipboard!</string>
+    <string name="upload_success_url">Success! URL: %s</string>
+    <string name="no_previous_upload">No previous upload link found.</string>
+    <string name="selected_file_is">Selected file: %s</string>
+    <string name="no_file_selected">No file selected.</string>
+    <string name="uploading_file">Uploading, please wait…</string>
+    <string name="upload_failed_reason">Upload failed: %s</string>
+    <string name="upload_successful">File uploaded successfully!</string>
+    <string name="upload_failed">Upload failed. Check logs for details.</string>
+    <string name="upload_error_reason">Upload error: %s</string>
+
+    <string name="files_title_placeholder">Files</string>
+    <string name="copy_link">Copy Link</string>
+    <string name="download">Download</string>
+    <string name="selected_file_details">Selected: %1$s (%2$s)</string>
+    <string name="upload_successful_with_url">Upload successful!</string>
+
+    <string name="action_clear_history_title">Clear History</string>
+    <string name="confirm_clear_history_title">Confirm Clear</string>
+    <string name="confirm_clear_history_message">Are you sure you want to delete all uploaded file history? This action cannot be undone.</string>
+    <string name="clear">Clear</string>
+    <string name="cancel">Cancel</string>
+    <string name="history_cleared">File history cleared.</string>
+
+    <string name="action_delete_item_title">Delete Item</string>
+    <string name="confirm_delete_item_title">Confirm Delete</string>
+    <string name="confirm_delete_item_message">Are you sure you want to delete this item?</string>
+    <string name="delete">Delete</string>
+    <string name="item_deleted">Item deleted.</string>
+    <string name="file_thumbnail_description">File Thumbnail</string>
+    <string name="confirm_delete_item_message_param">Are you sure you want to delete "%1$s"?</string>
+</resources>

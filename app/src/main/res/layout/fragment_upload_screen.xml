@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".UploadScreenFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="16dp"
+        android:clipToPadding="false">
+
+        <!-- Title for the screen -->
+        <TextView
+            android:id="@+id/upload_screen_title_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/upload_files_title"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingBottom="8dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Userhash Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/userhash_label"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="16sp"
+            android:layout_marginBottom="4dp"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/userhash_input_layout_fragment"
+            style="?attr/textInputStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/userhash_hint">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userhash_edit_text_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:minHeight="56dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="16dp"
+            android:minHeight="56dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/remember_my_userhash"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp" />
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/remember_userhash_switch_fragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?attr/materialSwitchStyle"/>
+        </LinearLayout>
+
+        <!-- File Selection Section title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_file_to_upload_title"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp"/>
+        <!-- File selection button -->
+        <LinearLayout
+            android:id="@+id/select_file_trigger_layout_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_input_like_container"
+            android:padding="12dp"
+            android:minHeight="56dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:layout_marginBottom="8dp">
+            <TextView
+                android:id="@+id/select_file_button_label_fragment"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/file_picker_button_text"
+                android:textSize="16sp"
+                android:textColor="?attr/colorOnSurface"
+                android:maxLines="1"
+                android:ellipsize="middle"
+                android:gravity="center_vertical" />
+            <ImageView
+                android:id="@+id/select_file_button_icon_view_fragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_upload_file"
+                android:contentDescription="@string/file_picker_icon_description"
+                app:tint="?attr/colorPrimary"/>
+        </LinearLayout>
+
+
+        <!-- FrameLayout to host ImageView ONLY -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:id="@+id/preview_image_view_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/colorSurfaceContainerHigh"
+                android:contentDescription="@string/preview_image_description"
+                android:scaleType="centerInside"
+                tools:srcCompat="@drawable/ic_download_24" />
+        </FrameLayout>
+
+        <!-- Status TextView (hidden) -->
+        <TextView
+            android:id="@+id/status_text_view_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            tools:text="This text is hidden"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:gravity="center_horizontal"
+            android:visibility="gone"/>
+
+        <!-- Result display after successful upload -->
+        <LinearLayout
+            android:id="@+id/upload_result_layout_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+            <TextView
+                android:id="@+id/result_text_view_fragment"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="14sp"
+                android:textIsSelectable="true"
+                tools:text="https://catbox.moe/yourfile.xyz"/>
+            <ImageButton
+                android:id="@+id/copy_link_button_fragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_content_copy"
+                android:background="?selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                android:layout_marginStart="8dp"
+                android:contentDescription="@string/copy_link_button_description"
+                app:tint="?attr/colorPrimary"/>
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/upload_button_fragment"
+            style="?attr/materialButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/start_uploading_button_text"
+            android:paddingVertical="14dp" />
+
+        <!-- ProgressBar now underneath the Upload Button -->
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/upload_progress_bar_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:indeterminate="false"
+            app:indicatorColor="?attr/colorPrimary"
+            app:trackColor="?attr/colorSurfaceVariant"
+            android:alpha="0.6"
+            app:trackCornerRadius="4dp"
+            android:progress="0"
+            android:max="100"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,6 @@
+<!-- res/drawable/bg_button_group.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="?attr/colorSurfaceContainer" /> <!-- CHANGED -->
+    <corners android:radius="8dp" />
+</shape>

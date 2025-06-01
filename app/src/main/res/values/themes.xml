@@ -1,0 +1,63 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Kity" parent="Theme.Material3.DayNight.NoActionBar">
+        <!--
+            No need to define colorPrimary, colorOnPrimary, colorSurface, etc. here
+            if you want full dynamic coloring from Material You.
+            The parent="Theme.Material3.DayNight.NoActionBar" handles setting these
+            up based on either default Material 3 palettes or dynamic colors.
+        -->
+
+        <!-- Status bar color will be derived dynamically based on surface colors -->
+        <!-- <item name="android:statusBarColor">?attr/colorSurface</item> -->
+        <!-- Window light status bar will be handled by DayNight and M3 -->
+
+        <!-- Your custom widget styles -->
+        <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>
+        <item name="materialButtonStyle">@style/Widget.App.Button</item>
+        <item name="materialSwitchStyle">@style/Widget.App.Switch</item>
+        <item name="materialCardViewStyle">@style/Widget.App.MaterialCardView</item>
+        <item name="materialIconButtonFilledTonalStyle">@style/Widget.App.IconButton.FilledTonal</item>
+
+    </style>
+
+    <style name="Theme.Kity" parent="Base.Theme.Kity" />
+
+    <!-- Widget Styles Using Theme Attributes -->
+    <style name="Widget.App.TextInputLayout" parent="Widget.Material3.TextInputLayout.FilledBox">
+        <!-- backgroundColor for FilledBox should use a container color -->
+        <item name="boxBackgroundColor">?attr/colorSurfaceContainerHighest</item>
+        <item name="hintTextColor">?attr/colorOnSurfaceVariant</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Medium</item>
+        <!-- Default strokeColor (underline) will adapt. For OutlinedBox, it's colorOutline -->
+    </style>
+
+    <style name="Widget.App.Button" parent="Widget.Material3.Button">
+        <!-- Default Material3.Button styling will use dynamic colors -->
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Medium</item>
+        <item name="android:paddingVertical">14dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <style name="Widget.App.Switch" parent="Widget.Material3.CompoundButton.Switch">
+        <!-- Let Material3 handle dynamic tinting based on theme -->
+        <!-- If you need custom selectors, they should use theme attributes -->
+        <item name="thumbTint">@color/switch_thumb_selector_dynamic</item>
+        <item name="trackTint">@color/switch_track_selector_dynamic</item>
+    </style>
+
+    <style name="Widget.App.MaterialCardView" parent="Widget.Material3.CardView.Elevated">
+        <!-- Elevation and background are handled by Material 3 parent style -->
+        <!-- Example default settings for consistency with your item_file_entry -->
+        <item name="cardElevation">1dp</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardCornerRadius">12dp</item>
+        <!-- contentPadding is 0dp by default for MaterialCardView; your LinearLayout handles it -->
+    </style>
+
+    <style name="Widget.App.IconButton.FilledTonal" parent="Widget.Material3.Button.IconButton.Filled.Tonal">
+        <!-- IconButtons will use theme colors appropriately based on this parent -->
+    </style>
+
+</resources>
