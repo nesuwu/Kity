@@ -13,11 +13,11 @@ class ViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapte
     }
 
     override fun createFragment(position: Int): Fragment {
-        val actualPosition = position % actualItemCount
+        val actualPosition = getActualPosition(position)
         return when (actualPosition) {
             0 -> UploadScreenFragment()
             1 -> FilesScreenFragment()
-            else -> throw IllegalStateException("Invalid actual position: $actualPosition")
+            else -> throw IllegalStateException("Invalid actual position: $actualPosition for virtual position $position")
         }
     }
 

@@ -18,15 +18,17 @@ class MainActivity : AppCompatActivity() {
         pagerAdapter = ViewPagerAdapter(this)
         viewPager.adapter = pagerAdapter
 
-        val middlePosition = Integer.MAX_VALUE / 2
-        val initialPage = middlePosition - (middlePosition % 2)
-        viewPager.setCurrentItem(initialPage, false)
+        if (pagerAdapter.actualItemCount > 1) {
+            val middlePosition = Integer.MAX_VALUE / 2
+            val initialPage = middlePosition - (middlePosition % pagerAdapter.actualItemCount)
+            viewPager.setCurrentItem(initialPage, false)
+        }
 
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 val currentActualPage = pagerAdapter.getActualPosition(viewPager.currentItem)
                 if (currentActualPage == 1) {
-                    viewPager.setCurrentItem(viewPager.currentItem - 1, true)
+                    navigateToUploadScreen()
                 } else {
                     if (isEnabled) {
                         isEnabled = false
@@ -36,5 +38,24 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
-}
 
+    fun navigateToUploadScreen() {
+        if (pagerAdapter.actualItemCount <= 0) return
+        val currentAdapterPosition = viewPager.currentItem
+        val currentActualPosition = pagerAdapter.getActualPosition(currentAdapterPosition)
+
+        if (currentActualPosition != 0) {
+            viewPager.setCurrentItem(currentAdapterPosition - 1, true)
+        }
+    }
+
+    fun navigateToFilesScreen() {
+        if (pagerAdapter.actualItemCount <= 1) return
+        val currentAdapterPosition = viewPager.currentItem
+        val currentActualPosition = pagerAdapter.getActualPosition(currentAdapterPosition)
+
+        if (currentActualPosition != 1) {
+            viewPager.setCurrentItem(currentAdapterPosition + 1, true)
+        }
+    }
+}
