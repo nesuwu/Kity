@@ -82,5 +82,4 @@ Contributions, issues, and feature requests are welcome!
 This project is licensed under the [MIT License] - see the `LICENSE.md` file for details.
 
 ---
-
-*Inspired by my Roman Empite -  [Cathy-Electron](https://github.com/nesuwu/Cathy-Electron).
+- Inspired by my Roman Empire -  [Cathy-Electron](https://github.com/nesuwu/Cathy-Electron).
