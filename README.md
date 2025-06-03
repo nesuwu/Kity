@@ -10,7 +10,7 @@ Kity is a lightweight Android application inspired by my old project - [Cathy-El
 *   **File Upload:**
     *   Upload files directly to [Catbox.moe](https://catbox.moe/).
     *   Supports anonymous uploads or uploads with a userhash.
-    *   Client-side file size limit (currently 200MB).
+    *   Server-side file size limit (currently 200MB) that can be increased via Donations to (Catbox)[https://catbox.moe].
     *   Determinate progress bar showing upload progress.
 *   **File Selection & Preview:**
     *   Easy file selection using the system file picker.
